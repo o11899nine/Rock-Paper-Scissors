@@ -1,4 +1,6 @@
 const choices = ["ROCK", "PAPER", "SCISSORS"];
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
@@ -17,6 +19,7 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "PAPER" && computerSelection === "SCISSORS" ||
         playerSelection === "SCISSORS" && computerSelection === "ROCK"
     ) {
+        computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
         
@@ -26,6 +29,7 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "PAPER" && computerSelection === "ROCK" ||
         playerSelection === "SCISSORS" && computerSelection === "PAPER"
     ) {
+        playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}`;
     }
 }
@@ -44,5 +48,6 @@ for (let round = 1; round < 6; round++) {
 
     // Round is played
     console.log(playRound(playerSelection, computerSelection));
+    console.log(`${playerScore} - ${computerScore}`);
 }
 
