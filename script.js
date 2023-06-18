@@ -1,3 +1,4 @@
+// Global variables
 const choices = ["ROCK", "PAPER", "SCISSORS"];
 let playerScore = 0;
 let computerScore = 0;
@@ -8,12 +9,12 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-    // TIE
+    // Check for tie
     if (playerSelection === computerSelection) {
         return `It's a tie! You both chose ${playerSelection}`;
     }
 
-    // PLAYER LOSE
+    // Check for player loss
     else if (
         playerSelection === "ROCK" && computerSelection === "PAPER" ||
         playerSelection === "PAPER" && computerSelection === "SCISSORS" ||
@@ -23,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
         
-    // PLAYER WIN
+    // Check for player win
     else if (
         playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
         playerSelection === "PAPER" && computerSelection === "ROCK" ||
@@ -34,20 +35,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-for (let round = 1; round < 6; round++) {
+function game() {
 
-    // Player chooses weapon
-    let playerSelection = "";
-    do {
-        playerSelection = prompt("Choose ROCK / PAPER / SCISSORS.").toUpperCase();
+    for (let round = 1; round < 6; round++) {
+
+        // Player chooses weapon
+        let playerSelection = "";
+        do {
+            playerSelection = prompt("Choose ROCK / PAPER / SCISSORS.").toUpperCase();
+        }
+        while (!choices.includes(playerSelection));
+        
+        // Computer chooses weapon
+        let computerSelection = getComputerChoice();
+
+        // Play round
+        console.log(playRound(playerSelection, computerSelection));
+
+        // Show current score
+        console.log(`${playerScore} - ${computerScore}`);
     }
-    while (!choices.includes(playerSelection));
-    
-    // Computer chooses weapon
-    let computerSelection = getComputerChoice();
-
-    // Round is played
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(`${playerScore} - ${computerScore}`);
 }
 
+
+
+game();
