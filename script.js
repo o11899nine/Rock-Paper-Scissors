@@ -3,8 +3,12 @@ const choices = ["ROCK", "PAPER", "SCISSORS"];
 let playerScore = 0;
 let computerScore = 0;
 
+function randInt(number) {
+    return Math.floor(Math.random() * number);
+}
+
 function getComputerChoice() {
-    return choices[Math.floor(Math.random()*choices.length)];
+    return choices[randInt(choices.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
