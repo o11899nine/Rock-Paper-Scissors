@@ -1,20 +1,25 @@
-// Global variables
-const choices = ["ROCK", "PAPER", "SCISSORS"];
 let playerScore = 0;
 let computerScore = 0;
+
+const scoreDiv = document.querySelector('.score');
+const roundResultDiv = document.querySelector('.round-result')
 
 function randInt(number) {
     return Math.floor(Math.random() * number);
 }
 
 function getComputerChoice() {
+    const choices = ["ROCK", "PAPER", "SCISSORS"];
     return choices[randInt(choices.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+    const playerSelection = this.value;
+    const computerSelection = getComputerChoice();
+    let roundResult = "";
 
     if (playerSelection === computerSelection) {
-        return `It's a tie! You both chose ${playerSelection}`;
+        roundResult = `It's a tie! You both chose ${playerSelection}`;
     }
 
     else if (
@@ -23,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "SCISSORS" && computerSelection === "ROCK"
     ) {
         computerScore++;
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 
     else if (
@@ -32,20 +37,14 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "SCISSORS" && computerSelection === "PAPER"
     ) {
         playerScore++;
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
     }
-}
 
-function game() {
-
-    const playerSelection = this.value;
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(`${playerScore} - ${computerScore}`);
-
+    roundResultDiv.textContent = roundResult;
+    scoreDiv.textContent = `${playerScore} - ${computerScore}`;
 }
 
 const buttons = document.querySelectorAll('.playerSelectionBtn');
 buttons.forEach((button) => {
-    button.addEventListener('click', game);
+    button.addEventListener('click', playRound);
 });
