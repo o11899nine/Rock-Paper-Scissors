@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
-        
+
     else if (
         playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
         playerSelection === "PAPER" && computerSelection === "ROCK" ||
@@ -38,21 +38,14 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    for (let round = 1; round < 6; round++) {
+    const playerSelection = this.value;
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(`${playerScore} - ${computerScore}`);
 
-        let computerSelection = getComputerChoice();
-        let playerSelection = "";
-        
-        do {
-            playerSelection = prompt("Choose ROCK / PAPER / SCISSORS.").toUpperCase();
-        }
-        while (!choices.includes(playerSelection));
-        
-        
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`${playerScore} - ${computerScore}`);
-    }
 }
 
-
-game();
+const buttons = document.querySelectorAll('.playerSelectionBtn');
+buttons.forEach((button) => {
+    button.addEventListener('click', game);
+});
