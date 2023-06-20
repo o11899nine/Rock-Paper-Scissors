@@ -1,3 +1,12 @@
+// A beats C, B beats A, C beats B
+const WEAPON_A = "ROCK";
+const WEAPON_B = "PAPER";
+const WEAPON_C = "SCISSORS";
+
+document.querySelector('.playerSelectionBtn.weapon-a').textContent = WEAPON_A;
+document.querySelector('.playerSelectionBtn.weapon-b').textContent = WEAPON_B;
+document.querySelector('.playerSelectionBtn.weapon-c').textContent = WEAPON_C;
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -9,12 +18,12 @@ function randInt(number) {
 }
 
 function getComputerChoice() {
-    const choices = ["ROCK", "PAPER", "SCISSORS"];
+    const choices = [WEAPON_A, WEAPON_B, WEAPON_C];
     return choices[randInt(choices.length)];
 }
 
 function playRound() {
-    const playerSelection = this.value;
+    const playerSelection = this.textContent;
     const computerSelection = getComputerChoice();
     let roundResult = "";
 
@@ -23,18 +32,18 @@ function playRound() {
     }
 
     else if (
-        playerSelection === "ROCK" && computerSelection === "PAPER" ||
-        playerSelection === "PAPER" && computerSelection === "SCISSORS" ||
-        playerSelection === "SCISSORS" && computerSelection === "ROCK"
+        playerSelection === WEAPON_A && computerSelection === WEAPON_B ||
+        playerSelection === WEAPON_B && computerSelection === WEAPON_C ||
+        playerSelection === WEAPON_C && computerSelection === WEAPON_A
     ) {
         computerScore++;
         roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 
     else if (
-        playerSelection === "ROCK" && computerSelection === "SCISSORS" ||
-        playerSelection === "PAPER" && computerSelection === "ROCK" ||
-        playerSelection === "SCISSORS" && computerSelection === "PAPER"
+        playerSelection === WEAPON_A && computerSelection === WEAPON_C ||
+        playerSelection === WEAPON_B && computerSelection === WEAPON_A ||
+        playerSelection === WEAPON_C && computerSelection === WEAPON_B
     ) {
         playerScore++;
         roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
