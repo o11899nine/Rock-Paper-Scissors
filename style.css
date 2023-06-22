@@ -1,5 +1,5 @@
 :root {
-  --site-color-01: #001C30;
+  --site-color-01: rgb(0, 28, 48);
   --site-color-02: #176B87;
   --site-color-03: #64CCC5;
   --site-color-04: #DAFFFB;
@@ -89,6 +89,12 @@ body {
   height: 150px;
   width: 150px;
   border-radius: 150px;
-  border: 2px solid rgb(189, 27, 175);
+  border: 2px solid var(--site-color-04);
+}
+
+.weapon-button:hover {
+  cursor: pointer;
+  background-color: rgb(5, 49, 80);
+  scale: 1.05;
 }
 
