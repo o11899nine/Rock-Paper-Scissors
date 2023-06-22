@@ -3,15 +3,26 @@ const WEAPON_A = "ROCK";
 const WEAPON_B = "PAPER";
 const WEAPON_C = "SCISSORS";
 
-document.querySelector('.playerSelectionBtn.weapon-a').textContent = WEAPON_A;
-document.querySelector('.playerSelectionBtn.weapon-b').textContent = WEAPON_B;
-document.querySelector('.playerSelectionBtn.weapon-c').textContent = WEAPON_C;
+const STARTING_HEARTS = 5;
+let playerHearts= STARTING_HEARTS;
+let computerHearts = STARTING_HEARTS;
 
-let playerScore = 0;
-let computerScore = 0;
-
-const scoreDiv = document.querySelector('.score');
+const choiceText = document.querySelector('.choice-text');
 const roundResultDiv = document.querySelector('.round-result')
+
+const weaponButtons = document.querySelectorAll('.weapon-button');
+weaponButtons.forEach((button) => {
+    button.addEventListener('click', playRound);
+});
+
+document.querySelector('.weapon-button.weapon-a').textContent = WEAPON_A;
+document.querySelector('.weapon-button.weapon-b').textContent = WEAPON_B;
+document.querySelector('.weapon-button.weapon-c').textContent = WEAPON_C;
+
+
+
+
+
 
 function randInt(number) {
     return Math.floor(Math.random() * number);
@@ -23,7 +34,9 @@ function getComputerChoice() {
 }
 
 function playRound() {
+    choiceText.style.visibility = "hidden";
     const playerSelection = this.textContent;
+    console.log(playerSelection);
     const computerSelection = getComputerChoice();
     let roundResult = "";
 
@@ -50,10 +63,26 @@ function playRound() {
     }
 
     roundResultDiv.textContent = roundResult;
-    scoreDiv.textContent = `${playerScore} - ${computerScore}`;
+    // scoreDiv.textContent = `${playerScore} - ${computerScore}`;
 }
 
-const buttons = document.querySelectorAll('.playerSelectionBtn');
-buttons.forEach((button) => {
-    button.addEventListener('click', playRound);
-});
+
+
+function setHearts(n) {
+    const heartsContainers = document.querySelectorAll('.hearts-container');
+    heartsContainers.forEach((e) => {
+        for (let i = 0; i < STARTING_HEARTS; i++) {
+            const HEART_ICON = document.createElement("img");
+            HEART_ICON.src = "img/heart.png";
+            HEART_ICON.width = "30";
+            e.appendChild(HEART_ICON);
+        };
+    });
+}
+
+function restart() {
+    setHearts(STARTING_HEARTS);
+    choiceText.style.visibility = "visible";
+}
+
+restart();

@@ -57,6 +57,10 @@ body {
   text-align: end;
 }
 
+.hearts-container {
+  display: flex;
+  gap: 10px;
+}
 
 
 .choice-text {
@@ -70,14 +74,18 @@ body {
   border: 2px solid red;
 }
 
-.weapon-container {
+.weapons-container {
   border: 2px solid rgb(17, 153, 158);
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-.weapon {
+.weapon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
   height: 150px;
   width: 150px;
   border-radius: 150px;
