@@ -18,6 +18,8 @@ body {
 }
 
 .main-container {
+  border: 2px solid yellow;
+  height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Space Grotesk', sans-serif;
@@ -58,12 +60,17 @@ body {
 
 
 .choice-text {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  font-size: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   border: 2px solid red;
 }
 
 .weapon-container {
-  height: 50px;
   border: 2px solid rgb(17, 153, 158);
   display: flex;
   justify-content: center;
@@ -71,8 +78,9 @@ body {
 }
 
 .weapon {
-  height: 50px;
-  width: 50px;
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
   border: 2px solid rgb(189, 27, 175);
 }
 
