@@ -1,25 +1,29 @@
-// TODO: better variable names health vs hearts
+// HTML element variables
+const playerHeartsDiv = document.querySelector(".player-health .hearts")
+const computerHeartsDiv = document.querySelector(".computer-health .hearts")
+const playerSelectionDiv = document.querySelector(".player-selection")
+const computerSelectionDiv = document.querySelector(".computer-selection");
+const gameTextDiv = document.querySelector(".game-text");
+const weaponADiv = document.querySelector(".weapon-button.weapon-a");
+const weaponBDiv = document.querySelector(".weapon-button.weapon-b");
+const weaponCDiv = document.querySelector(".weapon-button.weapon-c");
 
-// A beats C, B beats A, C beats B
+// Constants
 const WEAPON_A = "ROCK";
 const WEAPON_B = "PAPER";
 const WEAPON_C = "SCISSORS";
-
 const STARTING_HEARTS = 5;
-let playerHealth= STARTING_HEARTS;
+
+// Starting variables
+let playerHealth = STARTING_HEARTS;
 let computerHealth = STARTING_HEARTS;
 
-const choiceText = document.querySelector('.choice-text');
-const roundResultDiv = document.querySelector('.round-result')
+weaponADiv.textContent = WEAPON_A;
+weaponBDiv.textContent = WEAPON_B;
+weaponCDiv.textContent = WEAPON_C;
 
 
-document.querySelector('.weapon-button.weapon-a').textContent = WEAPON_A;
-document.querySelector('.weapon-button.weapon-b').textContent = WEAPON_B;
-document.querySelector('.weapon-button.weapon-c').textContent = WEAPON_C;
 
-
-const playerHearts = document.querySelector('.player-score .hearts-container')
-const computerHearts = document.querySelector('.computer-score .hearts-container')
 
 
 
@@ -40,7 +44,7 @@ function playRound() {
     let roundResult = "";
 
     if (playerSelection === computerSelection) {
-        roundResult = `It's a tie! You both chose ${playerSelection}`;
+        roundResult = `It"s a tie! You both chose ${playerSelection}`;
     }
 
     else if (
@@ -70,7 +74,7 @@ function playRound() {
 
 
 function setHearts(n) {
-    const heartsContainers = document.querySelectorAll('.hearts-container');
+    const heartsContainers = document.querySelectorAll(".hearts");
     heartsContainers.forEach((e) => {
         for (let i = 0; i < STARTING_HEARTS; i++) {
             const HEART_ICON = document.createElement("img");
@@ -83,12 +87,11 @@ function setHearts(n) {
 
 function restart() {
     setHearts(STARTING_HEARTS);
-    choiceText.style.visibility = "visible";
 }
 
-const weaponButtons = document.querySelectorAll('.weapon-button');
+const weaponButtons = document.querySelectorAll(".weapon-button");
 weaponButtons.forEach((button) => {
-    button.addEventListener('click', playRound);
+    button.addEventListener("click", playRound);
 });
 
 restart();
