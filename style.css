@@ -9,19 +9,55 @@ body {
   color: white;
 }
 
-.player-choices {
-  border: 2px solid red;
+.main-container {
+  border: 2px solid yellow;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 50px;
+  border: 2px solid lightgreen;
+}
+
+.lives-container {
+  height: 50px;
+  border: 2px solid orange;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.lives-container .player-lives,
+.lives-container .computer-lives {
+  width: 200px;
+}
+
+.lives-container .player-lives {
+  height: 50px;
+  border: 2px solid lightblue;
+}
+
+.lives-container .computer-lives {
+  height: 50px;
+  border: 2px solid lightblue;
+}
+
+.choice-text {
+  height: 50px;
+  border: 2px solid red;
+}
+
+.weapon-container {
+  height: 50px;
+  border: 2px solid rgb(17, 153, 158);
+  display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-.playerSelectionBtn {
-  height: 100px;
-  width: 100px;
-  background: none;
-  border: 3px solid white;
-  color: white;
-  border-radius: 20px;
+.weapon {
+  height: 50px;
+  width: 50px;
+  border: 2px solid rgb(189, 27, 175);
 }
+
