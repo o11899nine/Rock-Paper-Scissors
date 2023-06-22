@@ -1,7 +1,7 @@
 :root {
   --site-color-01: #001c30;
-  --site-color-02: #176B87;
-  --site-color-03: #64CCC5;
+  --site-color-02: #053150;
+  --site-color-03: #176B87;
   --site-color-04: #DAFFFB;
   font-size: 62.5%;
 }
@@ -14,7 +14,7 @@
 
 body {
   background-color: var(--site-color-01);
-  color: white;
+  color: var(--site-color-04);
 }
 
 .main-container {
@@ -26,7 +26,9 @@ body {
 .header {
   margin: 20px 0px;
   height: 100px;
-  background-color: rgb(5, 49, 80);
+  background-color: var(--site-color-02);
+  border: 2px solid var(--site-color-03);
+  border-radius: 10px;
   color: var(--site-color-04);
   font-weight: bold;
   font-size: 3.2rem;
@@ -99,7 +101,7 @@ body {
   width: 150px;
   border-radius: 150px;
   border: 2px solid var(--site-color-04);
-  background-color: rgb(5, 49, 80);
+  background-color: var(--site-color-02);
   transition: ease-in-out 75ms;
 }
 
