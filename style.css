@@ -64,17 +64,18 @@ body {
 .game-screen {
   border: 2px solid aqua;
   display: flex;
+  justify-content: space-between;
   height: 500px;
 }
 
 .player-selection,
 .computer-selection {
-  flex-grow: 1;
-  width: 50px;
   border: 2px solid rgb(189, 11, 85);
+  width: 30%;
 }
 
 .game-text {
+  width: 40%;
   /* margin-top: 200px;
   margin-bottom: 100px; */
   font-size: 3.2rem;

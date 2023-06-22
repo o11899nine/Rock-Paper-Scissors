@@ -22,8 +22,9 @@ weaponADiv.textContent = WEAPON_A;
 weaponBDiv.textContent = WEAPON_B;
 weaponCDiv.textContent = WEAPON_C;
 
-
-
+weaponADiv.addEventListener("click", playRound);
+weaponBDiv.addEventListener("click", playRound);
+weaponCDiv.addEventListener("click", playRound);
 
 
 
@@ -32,19 +33,18 @@ function randInt(number) {
     return Math.floor(Math.random() * number);
 }
 
-function getComputerChoice() {
+function getComputerSelection() {
     const choices = [WEAPON_A, WEAPON_B, WEAPON_C];
     return choices[randInt(choices.length)];
 }
 
 function playRound() {
-    // choiceText.style.visibility = "hidden";
     const playerSelection = this.textContent;
-    const computerSelection = getComputerChoice();
+    const computerSelection = getComputerSelection();
     let roundResult = "";
 
     if (playerSelection === computerSelection) {
-        roundResult = `It"s a tie! You both chose ${playerSelection}`;
+        gameTextDiv.textContent = "It's a tie!";
     }
 
     else if (
@@ -52,9 +52,9 @@ function playRound() {
         playerSelection === WEAPON_B && computerSelection === WEAPON_C ||
         playerSelection === WEAPON_C && computerSelection === WEAPON_A
     ) {
-        roundResult = `You lose! ${computerSelection} beats ${playerSelection}`;
+        gameTextDiv.textContent = "You lose!";
         playerHealth--;
-        playerHearts.removeChild(playerHearts.firstElementChild);
+        playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
 
     else if (
@@ -62,13 +62,11 @@ function playRound() {
         playerSelection === WEAPON_B && computerSelection === WEAPON_A ||
         playerSelection === WEAPON_C && computerSelection === WEAPON_B
     ) {
-        roundResult = `You win! ${playerSelection} beats ${computerSelection}`;
+        gameTextDiv.textContent = "You win!";
         computerHealth--;
-        computerHearts.removeChild(computerHearts.firstElementChild);
+        computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
-    roundResultDiv.textContent = roundResult;
-    // scoreDiv.textContent = `${playerScore} - ${computerScore}`;
 }
 
 
@@ -89,9 +87,5 @@ function restart() {
     setHearts(STARTING_HEARTS);
 }
 
-const weaponButtons = document.querySelectorAll(".weapon-button");
-weaponButtons.forEach((button) => {
-    button.addEventListener("click", playRound);
-});
 
 restart();
