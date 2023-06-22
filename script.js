@@ -40,10 +40,10 @@ function getComputerSelection() {
 
 function playRound() {
     const playerSelection = this.value;
-    playerSelectionDiv.innerHTML =  `<img src="img/${playerSelection}_hand.png">`
-    
+    playerSelectionDiv.innerHTML = `<img src="img/${playerSelection}_hand.png">`;  
+
     const computerSelection = getComputerSelection();
-    computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}_hand.png">`
+    computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}_hand.png">`;
 
     if (playerSelection === computerSelection) {
         gameTextDiv.textContent = "It's a tie!";
