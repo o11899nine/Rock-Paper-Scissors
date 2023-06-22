@@ -18,9 +18,9 @@ const STARTING_HEARTS = 5;
 let playerHealth = STARTING_HEARTS;
 let computerHealth = STARTING_HEARTS;
 
-weaponADiv.textContent = WEAPON_A;
-weaponBDiv.textContent = WEAPON_B;
-weaponCDiv.textContent = WEAPON_C;
+weaponADiv.value = WEAPON_A;
+weaponBDiv.value = WEAPON_B;
+weaponCDiv.value = WEAPON_C;
 
 weaponADiv.addEventListener("click", playRound);
 weaponBDiv.addEventListener("click", playRound);
@@ -38,8 +38,8 @@ function getComputerSelection() {
     return choices[randInt(choices.length)];
 }
 
-function playRound() {
-    const playerSelection = this.textContent;
+function playRound(playerSelection) {
+    console.log(playerSelection);
     const computerSelection = getComputerSelection();
     let roundResult = "";
 
