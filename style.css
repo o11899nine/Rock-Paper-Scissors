@@ -1,3 +1,11 @@
+:root {
+  --site-color-01: #001C30;
+  --site-color-02: #176B87;
+  --site-color-03: #64CCC5;
+  --site-color-04: #DAFFFB;
+  font-size: 62.5%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,42 +13,49 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--site-color-01);
   color: white;
 }
 
 .main-container {
-  border: 2px solid yellow;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .header {
-  height: 50px;
-  border: 2px solid lightgreen;
+  margin: 20px 0px;
+  height: 100px;
+  background-color: var(--site-color-02);
+  color: var(--site-color-04);
+  font-weight: bold;
+  font-size: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lives-container {
-  height: 50px;
+.score {
   border: 2px solid orange;
+  font-size: 2.4rem;
   display: flex;
   justify-content: space-between;
 }
 
-.lives-container .player-lives,
-.lives-container .computer-lives {
-  width: 200px;
-}
-
-.lives-container .player-lives {
-  height: 50px;
+.player-score,
+.computer-score {
   border: 2px solid lightblue;
 }
 
-.lives-container .computer-lives {
-  height: 50px;
-  border: 2px solid lightblue;
+.player-score {
+  text-align: start;
 }
+
+.computer-score {
+  text-align: end;
+}
+
+
 
 .choice-text {
   height: 50px;
