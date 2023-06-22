@@ -9,9 +9,9 @@ const weaponBDiv = document.querySelector(".weapon-button.weapon-b");
 const weaponCDiv = document.querySelector(".weapon-button.weapon-c");
 
 // Constants
-const WEAPON_A = "ROCK";
-const WEAPON_B = "PAPER";
-const WEAPON_C = "SCISSORS";
+const WEAPON_A = "rock";
+const WEAPON_B = "paper";
+const WEAPON_C = "scissors";
 const STARTING_HEARTS = 5;
 
 // Starting variables
@@ -38,10 +38,12 @@ function getComputerSelection() {
     return choices[randInt(choices.length)];
 }
 
-function playRound(playerSelection) {
-    console.log(playerSelection);
+function playRound() {
+    const playerSelection = this.value;
+    playerSelectionDiv.innerHTML =  `<img src="img/${playerSelection}_hand.png">`
+    
     const computerSelection = getComputerSelection();
-    let roundResult = "";
+    computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}_hand.png">`
 
     if (playerSelection === computerSelection) {
         gameTextDiv.textContent = "It's a tie!";
@@ -65,6 +67,10 @@ function playRound(playerSelection) {
         gameTextDiv.textContent = "You win!";
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
+    }
+
+    if (playerHealth < 1 || computerHealth < 1) {
+        gameTextDiv.textContent = "Game over!";
     }
 
 }

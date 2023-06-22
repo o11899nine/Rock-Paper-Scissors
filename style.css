@@ -18,7 +18,6 @@ body {
 }
 
 .main-container {
-  border: 2px solid yellow;
   height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
@@ -38,17 +37,12 @@ body {
 }
 
 .health-bars {
-  border: 2px solid orange;
   height: 70px;
   font-size: 2.4rem;
   display: flex;
   justify-content: space-between;
 }
 
-.player-health,
-.computer-health {
-  border: 2px solid lightblue;
-}
 
 .computer-health {
   display: flex;
@@ -62,15 +56,24 @@ body {
 }
 
 .game-screen {
-  border: 2px solid aqua;
   display: flex;
   justify-content: space-between;
   height: 500px;
 }
 
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection > img {
+  width: 150px;
+  height: 180px;
+}
+
 .player-selection,
 .computer-selection {
-  border: 2px solid rgb(189, 11, 85);
   width: 30%;
 }
 
@@ -83,11 +86,9 @@ body {
   justify-content: center;
   align-items: center;
   /* height: 50px; */
-  border: 2px solid red;
 }
 
 .weapons-container {
-  border: 2px solid rgb(17, 153, 158);
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -104,9 +105,19 @@ body {
   border: 2px solid var(--site-color-04);
 }
 
+.weapon-button > img {
+  width: 50px;
+  height: 60px;
+}
+
 .weapon-button:hover {
   cursor: pointer;
   background-color: rgb(5, 49, 80);
   scale: 1.05;
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
 }
 
