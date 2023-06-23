@@ -107,17 +107,16 @@ body {
   font-size: 2.4rem;
   height: 150px;
   width: 150px;
-  border-radius: 15px;
   background-color: var(--site-color-02);
-  background-image: url("img/scroll.png");
-  background-size: 100% 100%;
+  background-image: url("img/scroll_square.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: ease-in-out 75ms;
 }
 
 .weapon-button > img {
   height: 100%;
   transform: rotateY(180deg);
-  border-radius: 15px;
 }
 
 .weapon-button:hover {
