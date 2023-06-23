@@ -2,7 +2,7 @@
   --site-color-01: #001c30;
   --site-color-02: #EFD1A9;
   --site-color-03: #176B87;
-  --site-color-04: #52331D;
+  --site-color-04: #291E0A;
   font-size: 62.5%;
 }
 
@@ -12,26 +12,35 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
 body {
   background-image: url('img/grass.png');
-  color: white;
+  background-size: 100% 100%;
 }
 
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Rosarivo', serif;
 }
 
 .header {
+  color: #65202B;
   margin: 20px 0px;
   height: 100px;;
   background-color: var(--site-color-02);
-  background-image: url("img/header.png");
+  background-image: url("img/scroll.png");
   background-size:100% 100%;
   font-weight: bold;
   font-size: 3.2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -99,14 +108,16 @@ body {
   height: 150px;
   width: 150px;
   border-radius: 15px;
-  border: 2px solid var(--site-color-04);
   background-color: var(--site-color-02);
+  background-image: url("img/scroll.png");
+  background-size: 100% 100%;
   transition: ease-in-out 75ms;
 }
 
 .weapon-button > img {
   height: 100%;
   transform: rotateY(180deg);
+  border-radius: 15px;
 }
 
 .weapon-button:hover {
