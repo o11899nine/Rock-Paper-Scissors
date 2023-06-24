@@ -4,27 +4,27 @@ const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
 const gameTextDiv = document.querySelector(".game-text");
-const weaponADiv = document.querySelector(".weapon-button.weapon-a");
-const weaponBDiv = document.querySelector(".weapon-button.weapon-b");
-const weaponCDiv = document.querySelector(".weapon-button.weapon-c");
+const HorseDiv = document.querySelector(".fighter-button.horse");
+const SpearmanDiv = document.querySelector(".fighter-button.spearman");
+const ArcherDiv = document.querySelector(".fighter-button.archer");
 
 // Constants
-const WEAPON_A = "rock";
-const WEAPON_B = "paper";
-const WEAPON_C = "scissors";
-const STARTING_HEARTS = 5;
+const HORSE = "horse";
+const SPEARMAN = "spearman";
+const ARCHER = "archer";
+const STARTING_HEALTH = 1;
 
 // Starting variables
-let playerHealth = STARTING_HEARTS;
-let computerHealth = STARTING_HEARTS;
+let playerHealth = STARTING_HEALTH;
+let computerHealth = STARTING_HEALTH;
 
-weaponADiv.value = WEAPON_A;
-weaponBDiv.value = WEAPON_B;
-weaponCDiv.value = WEAPON_C;
+HorseDiv.value = HORSE;
+SpearmanDiv.value = SPEARMAN;
+ArcherDiv.value = ARCHER;
 
-weaponADiv.addEventListener("click", playRound);
-weaponBDiv.addEventListener("click", playRound);
-weaponCDiv.addEventListener("click", playRound);
+HorseDiv.addEventListener("click", playRound);
+SpearmanDiv.addEventListener("click", playRound);
+ArcherDiv.addEventListener("click", playRound);
 
 
 
@@ -34,7 +34,7 @@ function randInt(number) {
 }
 
 function getComputerSelection() {
-    const choices = [WEAPON_A, WEAPON_B, WEAPON_C];
+    const choices = [HORSE, SPEARMAN, ARCHER];
     return choices[randInt(choices.length)];
 }
 
@@ -46,31 +46,32 @@ function playRound() {
     computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}.png">`;
 
     if (playerSelection === computerSelection) {
-        gameTextDiv.textContent = "It's a tie!";
+        gameTextDiv.innerHTML = `<h1>IT'S A TIE!</h1><h3>This will not end the war</h3>`;
     }
 
     else if (
-        playerSelection === WEAPON_A && computerSelection === WEAPON_B ||
-        playerSelection === WEAPON_B && computerSelection === WEAPON_C ||
-        playerSelection === WEAPON_C && computerSelection === WEAPON_A
+        playerSelection === HORSE && computerSelection === SPEARMAN ||
+        playerSelection === SPEARMAN && computerSelection === ARCHER ||
+        playerSelection === ARCHER && computerSelection === HORSE
     ) {
-        gameTextDiv.textContent = "You lose!";
+        gameTextDiv.innerHTML = `<h1>YOU LOSE!</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
         playerHealth--;
         playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
 
     else if (
-        playerSelection === WEAPON_A && computerSelection === WEAPON_C ||
-        playerSelection === WEAPON_B && computerSelection === WEAPON_A ||
-        playerSelection === WEAPON_C && computerSelection === WEAPON_B
+        playerSelection === HORSE && computerSelection === ARCHER ||
+        playerSelection === SPEARMAN && computerSelection === HORSE ||
+        playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
-        gameTextDiv.textContent = "You win!";
+        gameTextDiv.innerHTML = `<h1>YOU WIN!</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
     if (playerHealth < 1 || computerHealth < 1) {
-        gameTextDiv.textContent = "Game over!";
+        gameTextDiv.innerHTML = "GAME OVER<br>Click here to restart";
+        gameTextDiv.addEventListener('click', newGame);
     }
 
 }
@@ -80,7 +81,8 @@ function playRound() {
 function setHearts(n) {
     const heartsContainers = document.querySelectorAll(".hearts");
     heartsContainers.forEach((e) => {
-        for (let i = 0; i < STARTING_HEARTS; i++) {
+        e.innerHTML = "";
+        for (let i = 0; i < STARTING_HEALTH; i++) {
             const HEART_ICON = document.createElement("img");
             HEART_ICON.src = "img/heart.png";
             HEART_ICON.width = "30";
@@ -89,9 +91,12 @@ function setHearts(n) {
     });
 }
 
-function restart() {
-    setHearts(STARTING_HEARTS);
+function newGame() {
+    setHearts(STARTING_HEALTH);
+    playerSelectionDiv.innerHTML = "";
+    computerSelectionDiv.innerHTML = "";
+    gameTextDiv.textContent = "Choose your fighter!";
 }
 
 
-restart();
+newGame();
