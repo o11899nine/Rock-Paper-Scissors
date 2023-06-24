@@ -18,11 +18,14 @@ h3 {
   font-size: 2rem;
 }
 
+html {
+  cursor: url("img/aoe_cursor_arrow.png"), auto;
+}
+
 body {
   background-color: #728B33;
   background-image: url('img/grass.png');
   background-size: cover;
-  cursor: url("img/aoe_cursor_arrow.png"), auto;
 }
 
 .main-container {
@@ -101,6 +104,11 @@ body {
   text-align: center;
   text-shadow: 2px 2px black;
   width: 40%;
+}
+
+.message.game-over h1:hover,
+.message.game-over h3:hover {
+  cursor: url("img/aoe_cursor_hand.png"), pointer;
 }
 
 .weapons-container {

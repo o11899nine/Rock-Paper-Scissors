@@ -3,7 +3,7 @@ const playerHeartsDiv = document.querySelector(".player-health .hearts")
 const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
-const gameTextDiv = document.querySelector(".game-text");
+const messageDiv = document.querySelector(".message");
 const HorseDiv = document.querySelector(".fighter-button.horse");
 const SpearmanDiv = document.querySelector(".fighter-button.spearman");
 const ArcherDiv = document.querySelector(".fighter-button.archer");
@@ -12,7 +12,7 @@ const ArcherDiv = document.querySelector(".fighter-button.archer");
 const HORSE = "horse";
 const SPEARMAN = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 5;
+const STARTING_HEALTH = 1;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
@@ -27,7 +27,15 @@ SpearmanDiv.addEventListener("click", playRound);
 ArcherDiv.addEventListener("click", playRound);
 
 
-
+function gameOver() {
+    messageDiv.addEventListener('click', function () { location.reload() });
+    HorseDiv.removeEventListener("click", playRound);
+    SpearmanDiv.removeEventListener("click", playRound);
+    ArcherDiv.removeEventListener("click", playRound);
+    HorseDiv.classList.toggle("active");
+    SpearmanDiv.classList.toggle("active");
+    ArcherDiv.classList.toggle("active");
+}
 
 function randInt(number) {
     return Math.floor(Math.random() * number);
@@ -46,7 +54,7 @@ function playRound() {
     computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}.png">`;
 
     if (playerSelection === computerSelection) {
-        gameTextDiv.innerHTML = `<h1>IT'S A TIE</h1><h3>This will not end the war</h3>`;
+        messageDiv.innerHTML = `<h1>IT'S A TIE</h1><h3>This will not end the war</h3>`;
     }
 
     else if (
@@ -54,7 +62,7 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
-        gameTextDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
+        messageDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
         playerHealth--;
         playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
@@ -64,20 +72,16 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === HORSE ||
         playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
-        gameTextDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
+        messageDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
     if (playerHealth < 1 || computerHealth < 1) {
-        gameTextDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
-        gameTextDiv.addEventListener('click', function () { location.reload() });
-        HorseDiv.removeEventListener("click", playRound);
-        SpearmanDiv.removeEventListener("click", playRound);
-        ArcherDiv.removeEventListener("click", playRound);
-        HorseDiv.classList.toggle("active");
-        SpearmanDiv.classList.toggle("active");
-        ArcherDiv.classList.toggle("active");
+        gameOver();
+        messageDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
+        messageDiv.classList.toggle("game-over");
+
     }
 
 }
