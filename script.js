@@ -12,7 +12,7 @@ const ArcherDiv = document.querySelector(".fighter-button.archer");
 const HORSE = "horse";
 const SPEARMAN = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 1;
+const STARTING_HEALTH = 5;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
@@ -46,7 +46,7 @@ function playRound() {
     computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}.png">`;
 
     if (playerSelection === computerSelection) {
-        gameTextDiv.innerHTML = `<h1>IT'S A TIE!</h1><h3>This will not end the war</h3>`;
+        gameTextDiv.innerHTML = `<h1>IT'S A TIE</h1><h3>This will not end the war</h3>`;
     }
 
     else if (
@@ -54,7 +54,7 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
-        gameTextDiv.innerHTML = `<h1>YOU LOSE!</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
+        gameTextDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
         playerHealth--;
         playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
@@ -64,14 +64,20 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === HORSE ||
         playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
-        gameTextDiv.innerHTML = `<h1>YOU WIN!</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
+        gameTextDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
     if (playerHealth < 1 || computerHealth < 1) {
-        gameTextDiv.innerHTML = "GAME OVER<br>Click here to restart";
-        gameTextDiv.addEventListener('click', newGame);
+        gameTextDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
+        gameTextDiv.addEventListener('click', function () { location.reload() });
+        HorseDiv.removeEventListener("click", playRound);
+        SpearmanDiv.removeEventListener("click", playRound);
+        ArcherDiv.removeEventListener("click", playRound);
+        HorseDiv.classList.toggle("active");
+        SpearmanDiv.classList.toggle("active");
+        ArcherDiv.classList.toggle("active");
     }
 
 }
@@ -93,9 +99,6 @@ function setHearts(n) {
 
 function newGame() {
     setHearts(STARTING_HEALTH);
-    playerSelectionDiv.innerHTML = "";
-    computerSelectionDiv.innerHTML = "";
-    gameTextDiv.textContent = "Choose your fighter!";
 }
 
 

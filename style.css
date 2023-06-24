@@ -127,7 +127,7 @@ body {
   transform: rotateY(180deg);
 }
 
-.fighter-button:hover {
+.fighter-button.active:hover {
   box-shadow: 1px 1px 20px 2px gold;
   cursor: url("img/aoe_cursor_hand.png"), pointer;
   scale: 1.05;
