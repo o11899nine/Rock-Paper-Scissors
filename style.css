@@ -1,7 +1,7 @@
 :root {
   --site-color-01: #001c30;
   --site-color-02: #EFD1A9;
-  --site-color-03: #176B87;
+  --site-color-03: #65202B;
   --site-color-04: #291E0A;
   font-size: 62.5%;
 }
@@ -19,6 +19,7 @@ h1 {
 h3 {
   font-size: 2rem;
 }
+
 body {
   background-image: url('img/grass.png');
   background-size: 100% 100%;
@@ -31,12 +32,13 @@ body {
 }
 
 .header {
-  color: #65202B;
+  color: var(--site);
   margin: 20px 0px;
-  height: 100px;;
+  height: 100px;
+  ;
   background-color: var(--site-color-02);
   background-image: url("img/scroll.png");
-  background-size:100% 100%;
+  background-size: 100% 100%;
   font-weight: bold;
   font-size: 3.2rem;
   display: flex;
@@ -50,6 +52,9 @@ body {
   font-size: 2.4rem;
   display: flex;
   justify-content: space-between;
+  color: var(--site-color-02);
+  text-shadow: 1px 1px black;
+  font-weight: bold;
 }
 
 
@@ -62,6 +67,10 @@ body {
 .hearts {
   display: flex;
   gap: 10px;
+}
+
+.hearts>img {
+  filter: drop-shadow(1px 1px 1px black);
 }
 
 .game-screen {
@@ -81,14 +90,17 @@ body {
   width: 30%;
 }
 
-.player-selection > img {
+.player-selection>img {
   transform: rotateY(180deg);
-  }
+}
 
 
 .game-text {
   width: 40%;
-  font-size: 3.2rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--site-color-02);
+  text-shadow: 2px 2px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,16 +124,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   transition: ease-in-out 75ms;
+  box-shadow: 1px 1px 15px 1px black;
 }
 
-.weapon-button > img {
-  height: 100%;
+.weapon-button>img {
+  height: 90%;
   transform: rotateY(180deg);
 }
 
 .weapon-button:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 20px 2px var(--site-color-04);
+  box-shadow: 1px 1px 20px 2px gold;
   scale: 1.05;
 }
 
@@ -129,4 +142,3 @@ body {
   margin-top: 50px;
   text-align: center;
 }
-
