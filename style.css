@@ -1,9 +1,7 @@
 :root {
   font-size: 62.5%;
-  --site-color-01: #001c30;
+  --site-color-01: #291E0A;
   --site-color-02: #EFD1A9;
-  --site-color-03: #65202B;
-  --site-color-04: #291E0A;
 }
 
 * {
@@ -23,7 +21,8 @@ h3 {
 body {
   background-color: #728B33;
   background-image: url('img/grass.png');
-  background-size: 100% 100%;
+  background-size: cover;
+  cursor: url("img/aoe_cursor_arrow.png"), auto;
 }
 
 .main-container {
@@ -37,9 +36,8 @@ body {
   background-color: var(--site-color-02);
   background-image: url("img/scroll.png");
   background-size: 100% 100%;
-  color: var(--site);
+  color: var(--site-color-01);
   display: flex;
-  font-size: 3.2rem;
   font-weight: bold;
   flex-direction: column;
   height: 100px;
@@ -75,7 +73,6 @@ body {
 .game-screen {
   display: flex;
   height: 500px;
-  justify-content: space-between;
 }
 
 .selection {
@@ -89,7 +86,7 @@ body {
   width: 30%;
 }
 
-.player-selection>img {
+.player-selection > img {
   transform: rotateY(180deg);
 }
 
@@ -114,11 +111,9 @@ body {
   align-items: center;
   background-color: var(--site-color-02);
   background-image: url("img/scroll_square.png");
-  background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 1px 1px 15px 1px black;
   display: flex;
-  font-size: 2.4rem;
   height: 150px;
   justify-content: center;
   transition: ease-in-out 75ms;
@@ -132,7 +127,7 @@ body {
 
 .weapon-button:hover {
   box-shadow: 1px 1px 20px 2px gold;
-  cursor: pointer;
+  cursor: url("img/aoe_cursor_hand.png"), auto;
   scale: 1.05;
 }
 
