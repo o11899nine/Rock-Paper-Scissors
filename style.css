@@ -1,15 +1,15 @@
 :root {
+  font-size: 62.5%;
   --site-color-01: #001c30;
   --site-color-02: #EFD1A9;
   --site-color-03: #65202B;
   --site-color-04: #291E0A;
-  font-size: 62.5%;
 }
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -21,47 +21,46 @@ h3 {
 }
 
 body {
+  background-color: #728B33;
   background-image: url('img/grass.png');
   background-size: 100% 100%;
 }
 
 .main-container {
-  max-width: 1200px;
-  margin: 0 auto;
   font-family: 'Rosarivo', serif;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .header {
-  color: var(--site);
-  margin: 20px 0px;
-  height: 100px;
-  ;
+  align-items: center;
   background-color: var(--site-color-02);
   background-image: url("img/scroll.png");
   background-size: 100% 100%;
-  font-weight: bold;
-  font-size: 3.2rem;
+  color: var(--site);
   display: flex;
+  font-size: 3.2rem;
+  font-weight: bold;
   flex-direction: column;
-  align-items: center;
+  height: 100px;
   justify-content: center;
+  margin: 20px 0px;
 }
 
 .health-bars {
-  height: 70px;
-  font-size: 2.4rem;
-  display: flex;
-  justify-content: space-between;
   color: var(--site-color-02);
-  text-shadow: 1px 1px black;
+  display: flex;
+  font-size: 2.4rem;
   font-weight: bold;
+  height: 70px;
+  justify-content: space-between;
+  text-shadow: 1px 1px black;
 }
 
-
 .computer-health {
+  align-items: end;
   display: flex;
   flex-direction: column;
-  align-items: end;
 }
 
 .hearts {
@@ -69,19 +68,19 @@ body {
   gap: 10px;
 }
 
-.hearts>img {
+.hearts > img {
   filter: drop-shadow(1px 1px 1px black);
 }
 
 .game-screen {
   display: flex;
-  justify-content: space-between;
   height: 500px;
+  justify-content: space-between;
 }
 
 .selection {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -94,37 +93,36 @@ body {
   transform: rotateY(180deg);
 }
 
-
 .game-text {
-  width: 40%;
+  align-items: center;
+  color: var(--site-color-02);
+  display: flex;
   font-size: 4rem;
   font-weight: bold;
-  color: var(--site-color-02);
-  text-shadow: 2px 2px black;
-  display: flex;
   justify-content: center;
-  align-items: center;
+  text-shadow: 2px 2px black;
+  width: 40%;
 }
 
 .weapons-container {
   display: flex;
-  justify-content: center;
   gap: 50px;
+  justify-content: center;
 }
 
 .weapon-button {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  height: 150px;
-  width: 150px;
   background-color: var(--site-color-02);
   background-image: url("img/scroll_square.png");
-  background-size: cover;
   background-repeat: no-repeat;
-  transition: ease-in-out 75ms;
+  background-size: cover;
   box-shadow: 1px 1px 15px 1px black;
+  display: flex;
+  font-size: 2.4rem;
+  height: 150px;
+  justify-content: center;
+  transition: ease-in-out 75ms;
+  width: 150px;
 }
 
 .weapon-button>img {
@@ -133,8 +131,8 @@ body {
 }
 
 .weapon-button:hover {
-  cursor: pointer;
   box-shadow: 1px 1px 20px 2px gold;
+  cursor: pointer;
   scale: 1.05;
 }
 
