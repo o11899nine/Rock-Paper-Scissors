@@ -3,7 +3,7 @@ const playerHeartsDiv = document.querySelector(".player-health .hearts")
 const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
-const messageDiv = document.querySelector(".message");
+const messageDiv = document.querySelector(".result-message");
 const restartButton = document.querySelector(".restart-button");
 const fightersContainerDiv = document.querySelector(".fighters-container");
 const horseBtn = document.querySelector(".horse-button");
@@ -14,7 +14,7 @@ const archerBtn = document.querySelector(".archer-button");
 const HORSE = "horse";
 const SPEARMAN = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 1;
+const STARTING_HEALTH = 3;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
@@ -71,10 +71,12 @@ function playRound() {
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
-    if (playerHealth < 1 || computerHealth < 1) {
+    if (playerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>GAME OVER!</h1>";
-
+        messageDiv.innerHTML = "<h1>YOU HAVE BEEN DEFEATED!</h1>";
+    } else if (computerHealth < 1) {
+        gameOver();
+        messageDiv.innerHTML = "<h1>YOU ARE VICTORIOUS!</h1>"
     }
 
 }

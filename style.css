@@ -110,7 +110,7 @@ body {
   width: 40%;
 }
 
-.message {
+.result-message {
   font-size: 4rem;
   font-weight: bold;
   text-shadow: 2px 2px black;
