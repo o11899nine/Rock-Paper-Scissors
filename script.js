@@ -72,7 +72,7 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
-        messageDiv.innerHTML = `<div class="txt1">YOU LOSE</div><div class=txt2">The enemy's ${computerSelection} beats your ${playerSelection}</div>`;
+        messageDiv.innerHTML = `<div class="txt1">YOU LOSE</div><div class="txt2">The enemy's ${computerSelection} beats your ${playerSelection}</div>`;
         playerHealth--;
         playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
@@ -82,7 +82,7 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === HORSE ||
         playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
-        messageDiv.innerHTML = `<div class="txt1">YOU WIN</div><div class=txt2">Your ${playerSelection} beats the enemy's ${computerSelection}</div>`;
+        messageDiv.innerHTML = `<div class="txt1">YOU WIN</div><div class="txt2">Your ${playerSelection} beats the enemy's ${computerSelection}</div>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
