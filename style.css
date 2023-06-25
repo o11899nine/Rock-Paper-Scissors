@@ -4,7 +4,7 @@
   --aoe-beige: #EFD1A9;
   --aoe-brown: #291E0A;
   --aoe-cursor-default: url("img/aoe_cursor_arrow.png"), auto;
-  --aoe-cursor-hand: url("img/aoe_cursor_hand.png"), auto;
+  --aoe-cursor-hand: url("img/aoe_cursor_hand.png"), pointer;
 }
 
 *,
@@ -174,22 +174,6 @@ body {
   width: 215px;
 }
 
-.fighter-button {
-  background-color: var(--aoe-beige);
-  background-image: url("img/scroll_square.png");
-  background-size: cover;
-  height: 150px;
-  width: 150px;
-}
-
-.fighter-button:hover {
-  scale: 1.05;
-}
-
-.fighter-button>img {
-  height: 90%;
-  transform: rotateY(180deg);
-}
 
 /* FIGHTER CONTAINER */
 .fighters-container {
@@ -199,4 +183,23 @@ body {
   visibility: hidden;
 }
 
+.fighter-button {
+  background-color: var(--aoe-beige);
+  background-image: url("img/scroll_square.png");
+  background-size: cover;
+  height: 150px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  width: 150px;
+}
 
+.fighter-button:hover {
+  scale: 1.05;
+  top: -10px;
+}
+
+.fighter-button>img {
+  height: 90%;
+  transform: rotateY(180deg);
+}
