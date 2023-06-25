@@ -4,33 +4,31 @@ const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
 const messageDiv = document.querySelector(".message");
-const HorseDiv = document.getElementById("horse-button");
-const SpearmanDiv = document.getElementById("spearman-button");
-const ArcherDiv = document.getElementById("archer-button");
+const restartButton = document.getElementById("restart-button");
+const fightersContainerDiv = document.getElementById("fighters-container")
+const horseDiv = document.getElementById("horse-button");
+const spearmanDiv = document.getElementById("spearman-button");
+const archerDiv = document.getElementById("archer-button");
 
 // Constants
 const HORSE = "horse";
-const SPEARMAN = "spearman";
+const spearman = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 5;
+const STARTING_HEALTH = 1;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
 let computerHealth = STARTING_HEALTH;
 
-HorseDiv.addEventListener("click", playRound);
-SpearmanDiv.addEventListener("click", playRound);
-ArcherDiv.addEventListener("click", playRound);
+restartButton.addEventListener('click', function () { location.reload() });
+horseDiv.addEventListener("click", playRound);
+spearmanDiv.addEventListener("click", playRound);
+archerDiv.addEventListener("click", playRound);
 
 
 function gameOver() {
-    messageDiv.addEventListener('click', function () { location.reload() });
-    HorseDiv.removeEventListener("click", playRound);
-    SpearmanDiv.removeEventListener("click", playRound);
-    ArcherDiv.removeEventListener("click", playRound);
-    HorseDiv.classList.toggle("active");
-    SpearmanDiv.classList.toggle("active");
-    ArcherDiv.classList.toggle("active");
+    restartButton.style.display = "block";
+    fightersContainerDiv.style.visibility = "hidden";
 }
 
 function randInt(number) {
@@ -38,7 +36,7 @@ function randInt(number) {
 }
 
 function getComputerSelection() {
-    const choices = [HORSE, SPEARMAN, ARCHER];
+    const choices = [HORSE, spearman, ARCHER];
     return choices[randInt(choices.length)];
 }
 
@@ -54,8 +52,8 @@ function playRound() {
     }
 
     else if (
-        playerSelection === HORSE && computerSelection === SPEARMAN ||
-        playerSelection === SPEARMAN && computerSelection === ARCHER ||
+        playerSelection === HORSE && computerSelection === spearman ||
+        playerSelection === spearman && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
         messageDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
@@ -65,19 +63,22 @@ function playRound() {
 
     else if (
         playerSelection === HORSE && computerSelection === ARCHER ||
-        playerSelection === SPEARMAN && computerSelection === HORSE ||
-        playerSelection === ARCHER && computerSelection === SPEARMAN
+        playerSelection === spearman && computerSelection === HORSE ||
+        playerSelection === ARCHER && computerSelection === spearman
     ) {
         messageDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
-    if (playerHealth < 1 || computerHealth < 1) {
+    if (playerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
-        messageDiv.classList.toggle("game-over");
-
+        messageDiv.innerHTML = "<h1>YOU HAVE BEEN DEFEATED!</h1>";
+        
+    } else if (computerHealth < 1) {
+        gameOver();
+        messageDiv.innerHTML = "<h1>YOU ARE VICTORIOUS!</h1>";
+        
     }
 
 }

@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="main-container">
-            <header class="header"><h1>ROCK PAPER SCISSORS</h1><h3>AoE Edition</h3></header>
+            <header class="banner"><h1>ROCK PAPER SCISSORS</h1><h3>AoE Edition</h3></header>
 
             <!-- Health bars -->
             <div class="health-bars">
@@ -31,16 +31,26 @@
             <!-- Game screen -->
             <div class="game-screen">
                 <div class="selection player-selection"></div>
-                <div class="game-text"><div class="message">Choose your fighter!</div></div>
+               
+                <div class="game-text">
+                    <div class="message">Choose your fighter!</div>
+                    <!-- Restart button -->
+                    <div id="restart-button"><h2>Restart</h2></div></div>
+
                 <div class="selection computer-selection"></div>
             </div>
 
-            <!-- Weapon choices -->
-            <div class="weapons-container">
-                <button id="horse-button" class="fighter-button active" value="horse"><img src="img/horse.png" alt="Horse"></button>
-                <button id="spearman-button" class="fighter-button spearman active" value="spearman"><img src="img/spearman.png" alt="Spearman"></button>
-                <button id = "archer-button" class="fighter-button archer active" value="archer"><img src="img/archer.png" alt="Archer"></button>
+            <!-- Fighter buttons -->
+            <div id="fighters-container">
+                <button id="horse-button" class="fighter-button active"
+                    value="horse"><img src="img/horse.png" alt="Horse"></button>
+                <button id="spearman-button"
+                    class="fighter-button spearman active" value="spearman"><img
+                        src="img/spearman.png" alt="Spearman"></button>
+                <button id="archer-button" class="fighter-button archer active"
+                    value="archer"><img src="img/archer.png" alt="Archer"></button>
             </div>
+
         </div>
     </body>
 </html>
