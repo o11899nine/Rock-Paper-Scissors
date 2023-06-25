@@ -1,10 +1,12 @@
 // HTML element variables
+const healthBarsDiv = document.querySelector(".health-bars");
 const playerHeartsDiv = document.querySelector(".player-health .hearts")
 const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
-const messageDiv = document.querySelector(".result-message");
-const restartButton = document.querySelector(".restart-button");
+const messageDiv = document.querySelector(".message");
+const howToPlayBtn = document.querySelector(".how-to-play-button");
+const newGameBtn = document.querySelector(".new-game-button");
 const fightersContainerDiv = document.querySelector(".fighters-container");
 const horseBtn = document.querySelector(".horse-button");
 const spearmanBtn = document.querySelector(".spearman-button");
@@ -17,18 +19,19 @@ const ARCHER = "archer";
 const STARTING_HEALTH = 3;
 
 // Starting variables
-let playerHealth = STARTING_HEALTH;
-let computerHealth = STARTING_HEALTH;
+let playerHealth;
+let computerHealth;
 
 horseBtn.addEventListener("click", playRound);
 spearmanBtn.addEventListener("click", playRound);
 archerBtn.addEventListener("click", playRound);
-restartButton.addEventListener('click', function () { location.reload() });
+newGameBtn.addEventListener('click', newGame);
 
 
 function gameOver() {
     fightersContainerDiv.style.visibility = "hidden";
-    restartButton.style.display = "block";
+    newGameBtn.style.display = "flex";
+    howToPlayBtn.style.display = "flex";
 }
 
 function randInt(number) {
@@ -97,8 +100,13 @@ function setHearts(n) {
 }
 
 function newGame() {
+    healthBarsDiv.style.visibility = "visible";
+    fightersContainerDiv.style.visibility = "visible";
+    messageDiv.textContent = "Choose your fighter!";
+    messageDiv.style.display = "block";
+    howToPlayBtn.style.display = "none";
+    newGameBtn.style.display = "none";
+    playerHealth = STARTING_HEALTH;
+    computerHealth = STARTING_HEALTH;
     setHearts(STARTING_HEALTH);
 }
-
-
-newGame();

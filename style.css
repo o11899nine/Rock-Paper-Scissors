@@ -4,11 +4,6 @@
   --site-color-02: #EFD1A9;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 button {
   border: 0;
@@ -22,8 +17,24 @@ h3 {
   font-size: 2rem;
 }
 
-html {
+* {
   cursor: url("img/aoe_cursor_arrow.png"), auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
+  transition: ease-in-out 75ms;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 20px 2px gold;
+  cursor: url("img/aoe_cursor_hand.png"), pointer;
 }
 
 body {
@@ -58,6 +69,7 @@ body {
 .health-bars {
   color: var(--site-color-02);
   display: flex;
+  visibility: hidden;
   font-size: 2.4rem;
   font-weight: bold;
   height: 70px;
@@ -76,7 +88,7 @@ body {
   gap: 10px;
 }
 
-.hearts > img {
+.hearts>img {
   filter: drop-shadow(1px 1px 1px black);
 }
 
@@ -96,7 +108,7 @@ body {
   width: 30%;
 }
 
-.player-selection > img {
+.player-selection>img {
   transform: rotateY(180deg);
 }
 
@@ -110,42 +122,36 @@ body {
   width: 40%;
 }
 
-.result-message {
+.message {
+  display: none;
   font-size: 4rem;
   font-weight: bold;
   text-shadow: 2px 2px black;
 }
 
 
-.restart-button,
+.new-game-button,
 .start-button,
 .how-to-play-button {
-  /* display: none; */
   font-size: 2.6rem;
   padding: 5px 30px;
   margin-top: 20px;
   height: 50px;
-  width: 250px;
+  width: 215px;
+}
+
+
+.new-game-button {
+  /* display: flex; */
 }
 
 .fighters-container {
   display: flex;
+  visibility: hidden;
   gap: 50px;
   justify-content: center;
 }
 
-.button {
-  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
-  transition: ease-in-out 75ms;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.button:hover {
-  box-shadow: 1px 1px 20px 2px gold;
-  cursor: url("img/aoe_cursor_hand.png"), pointer;
-}
 
 .fighter-button {
   background-color: var(--site-color-02);
@@ -155,7 +161,7 @@ body {
   width: 150px;
 }
 
-.fighter-button:hover{
+.fighter-button:hover {
   scale: 1.05;
 }
 
