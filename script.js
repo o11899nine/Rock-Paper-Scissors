@@ -14,7 +14,7 @@ const archerDiv = document.getElementById("archer-button");
 const HORSE = "horse";
 const spearman = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 1;
+const STARTING_HEALTH = 5;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
