@@ -4,9 +4,9 @@ const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
 const messageDiv = document.querySelector(".message");
-const HorseDiv = document.querySelector(".fighter-button.horse");
-const SpearmanDiv = document.querySelector(".fighter-button.spearman");
-const ArcherDiv = document.querySelector(".fighter-button.archer");
+const HorseDiv = document.getElementById("horse-button");
+const SpearmanDiv = document.getElementById("spearman-button");
+const ArcherDiv = document.getElementById("archer-button");
 
 // Constants
 const HORSE = "horse";
@@ -17,10 +17,6 @@ const STARTING_HEALTH = 5;
 // Starting variables
 let playerHealth = STARTING_HEALTH;
 let computerHealth = STARTING_HEALTH;
-
-HorseDiv.value = HORSE;
-SpearmanDiv.value = SPEARMAN;
-ArcherDiv.value = ARCHER;
 
 HorseDiv.addEventListener("click", playRound);
 SpearmanDiv.addEventListener("click", playRound);

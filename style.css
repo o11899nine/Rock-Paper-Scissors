@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+button {
+  border: 0;
+}
+
 h1 {
   font-size: 3.2rem;
 }
@@ -122,7 +126,7 @@ body {
   background-color: var(--site-color-02);
   background-image: url("img/scroll_square.png");
   background-size: cover;
-  box-shadow: 1px 1px 15px 1px black;
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
   display: flex;
   height: 150px;
   justify-content: center;
