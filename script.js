@@ -1,9 +1,9 @@
 // HTML element variables
-const playerHeartsDiv = document.querySelector(".player-health .hearts")
-const computerHeartsDiv = document.querySelector(".computer-health .hearts")
-const playerSelectionDiv = document.querySelector(".player-selection")
-const computerSelectionDiv = document.querySelector(".computer-selection");
-const messageDiv = document.querySelector(".message");
+const playerHeartsDiv = document.querySelector("#player-health .hearts")
+const computerHeartsDiv = document.querySelector("#computer-health .hearts")
+const playerSelectionDiv = document.getElementById("player-selection")
+const computerSelectionDiv = document.getElementById("computer-selection");
+const messageDiv = document.getElementById("message");
 const restartButton = document.getElementById("restart-button");
 const fightersContainerDiv = document.getElementById("fighters-container")
 const horseDiv = document.getElementById("horse-button");
