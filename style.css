@@ -116,11 +116,16 @@ body {
   text-shadow: 2px 2px black;
 }
 
-.restart-button {
-  display: none;
+
+.restart-button,
+.start-button,
+.how-to-play-button {
+  /* display: none; */
   font-size: 2.6rem;
   padding: 5px 30px;
   margin-top: 20px;
+  height: 50px;
+  width: 250px;
 }
 
 .fighters-container {
@@ -132,6 +137,9 @@ body {
 .button {
   box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
   transition: ease-in-out 75ms;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .button:hover {
@@ -140,13 +148,10 @@ body {
 }
 
 .fighter-button {
-  align-items: center;
   background-color: var(--site-color-02);
   background-image: url("img/scroll_square.png");
   background-size: cover;
-  display: flex;
   height: 150px;
-  justify-content: center;
   width: 150px;
 }
 
