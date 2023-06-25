@@ -6,6 +6,7 @@ const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
 const messageDiv = document.querySelector(".message");
 const howToPlayBtn = document.querySelector(".how-to-play-button");
+const howToPlayDiv = document.querySelector(".how-to-play");
 const newGameBtn = document.querySelector(".new-game-button");
 const fightersContainerDiv = document.querySelector(".fighters-container");
 const horseBtn = document.querySelector(".horse-button");
@@ -26,7 +27,17 @@ horseBtn.addEventListener("click", playRound);
 spearmanBtn.addEventListener("click", playRound);
 archerBtn.addEventListener("click", playRound);
 newGameBtn.addEventListener('click', newGame);
+howToPlayBtn.addEventListener('click', howToPlay);
 
+function howToPlay() {
+    messageDiv.style.display = "none";
+    howToPlayBtn.style.display = "none";
+    newGameBtn.style.display = "flex";
+    healthBarsDiv.style.visibility = "hidden";
+    playerSelectionDiv.innerHTML = "";
+    computerSelectionDiv.innerHTML = "";
+    howToPlayDiv.style.display = "flex";
+}
 
 function gameOver() {
     fightersContainerDiv.style.visibility = "hidden";
@@ -106,6 +117,7 @@ function newGame() {
     messageDiv.style.display = "block";
     howToPlayBtn.style.display = "none";
     newGameBtn.style.display = "none";
+    howToPlayDiv.style.display = "none";
     playerSelectionDiv.innerHTML = "";
     computerSelectionDiv.innerHTML = "";
     playerHealth = STARTING_HEALTH;

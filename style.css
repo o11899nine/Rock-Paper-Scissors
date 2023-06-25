@@ -10,6 +10,10 @@ button {
   border: 0;
 }
 
+p {
+  margin-bottom: 5px;
+}
+
 h1 {
   font-size: 3.2rem;
 }
@@ -121,6 +125,20 @@ body {
   justify-content: center;
   text-align: center;
   width: 40%;
+}
+
+.how-to-play {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  border: 2px solid white;
+  font-size: 2rem;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
 }
 
 .message {
