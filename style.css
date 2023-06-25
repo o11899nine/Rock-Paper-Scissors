@@ -22,12 +22,14 @@ html {
 }
 
 /* TEXT */
-h1, .txt1 {
+h1,
+.txt1 {
   font-size: 3.2rem;
   font-weight: bold;
 }
 
-h2, .txt2 {
+h2,
+.txt2 {
   font-size: 2rem;
   font-weight: bold;
 }
@@ -115,8 +117,42 @@ body {
   width: 30%;
 }
 
+@keyframes fade-slide-from-left {
+  from {
+    left: -20px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
 .player-selection>img {
+  animation-name: fade-slide-from-left;
+  animation-duration: 1s;
   transform: rotateY(180deg);
+  position: relative;
+
+}
+
+@keyframes fade-slide-from-right {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+.computer-selection>img {
+  animation-name: fade-slide-from-right;
+  animation-duration: 1s;
+  position: relative;
 }
 
 .center-textarea {
