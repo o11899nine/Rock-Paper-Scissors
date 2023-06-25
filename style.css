@@ -1,13 +1,23 @@
 :root {
   font-size: 62.5%;
-  --site-color-01: #291E0A;
-  --site-color-02: #EFD1A9;
-  cursor: url("img/aoe_cursor_arrow.png"), auto;
+  --aoe-brown: #291E0A;
+  --aoe-beige: #EFD1A9;
+  --aoe-cursor-default: url("img/aoe_cursor_arrow.png"), auto;
+  --aoe-cursor-hand: url("img/aoe_cursor_hand.png"), auto;
 }
 
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+}
 
-button {
-  border: 0;
+html {
+  cursor: var(--aoe-cursor-default)
 }
 
 p {
@@ -22,11 +32,6 @@ h3 {
   font-size: 2rem;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 
 .button {
@@ -35,11 +40,12 @@ h3 {
   align-items: center;
   justify-content: center;
   display: flex;
+  border: none;
 }
 
 .button:hover {
   box-shadow: 1px 1px 20px 2px gold;
-  cursor: url("img/aoe_cursor_hand.png"), pointer;
+  cursor: var(--aoe-cursor-hand);
 }
 
 body {
@@ -54,10 +60,10 @@ body {
   max-width: 1200px;
 }
 
-.banner {
-  color: var(--site-color-01);
+.aoe-scroll {
+  color: var(--aoe-brown);
   font-weight: bold;
-  background-color: var(--site-color-02);
+  background-color: var(--aoe-beige);
   background-image: url("img/scroll.png");
   background-size: 100% 100%;
 }
@@ -72,7 +78,7 @@ body {
 
 
 .health-bars {
-  color: var(--site-color-02);
+  color: var(--aoe-beige);
   display: flex;
   visibility: hidden;
   font-size: 2.4rem;
@@ -119,7 +125,7 @@ body {
 
 .game-text {
   align-items: center;
-  color: var(--site-color-02);
+  color: var(--aoe-beige);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,10 +134,10 @@ body {
 }
 
 .how-to-play {
-  background-color: var(--site-color-01);
+  background-color: var(--aoe-brown);
   height: 100%;
   width: 100%;
-  border: 2px solid var(--site-color-02);
+  border: 2px solid var(--aoe-beige);
   font-size: 2rem;
   border-radius: 20px;
   display: none;
@@ -172,7 +178,7 @@ body {
 
 
 .fighter-button {
-  background-color: var(--site-color-02);
+  background-color: var(--aoe-beige);
   background-image: url("img/scroll_square.png");
   background-size: cover;
   height: 150px;
