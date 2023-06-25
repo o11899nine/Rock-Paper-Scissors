@@ -17,17 +17,19 @@ const archerBtn = document.querySelector(".archer-button");
 const HORSE = "horse";
 const SPEARMAN = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 3;
+const STARTING_HEALTH = 5;
 
 // Starting variables
 let playerHealth;
 let computerHealth;
 
+// Initialize page
 horseBtn.addEventListener("click", playRound);
 spearmanBtn.addEventListener("click", playRound);
 archerBtn.addEventListener("click", playRound);
 newGameBtn.addEventListener('click', newGame);
 howToPlayBtn.addEventListener('click', howToPlay);
+
 
 function howToPlay() {
     messageDiv.style.display = "none";
@@ -113,7 +115,7 @@ function setHearts(n) {
 function newGame() {
     healthBarsDiv.style.visibility = "visible";
     fightersContainerDiv.style.visibility = "visible";
-    messageDiv.textContent = "Choose your fighter!";
+    messageDiv.innerHTML = "<h1>Choose your fighter!</h1>";
     messageDiv.style.display = "block";
     howToPlayBtn.style.display = "none";
     newGameBtn.style.display = "none";
