@@ -4,29 +4,31 @@ const computerHeartsDiv = document.querySelector(".computer-health .hearts")
 const playerSelectionDiv = document.querySelector(".player-selection")
 const computerSelectionDiv = document.querySelector(".computer-selection");
 const messageDiv = document.querySelector(".message");
+const restartButton = document.querySelector(".restart-button");
 const fightersContainerDiv = document.querySelector(".fighters-container");
-const HorseDiv = document.querySelector(".horse-button");
-const SpearmanDiv = document.querySelector(".spearman-button");
-const ArcherDiv = document.querySelector(".archer-button");
+const horseBtn = document.querySelector(".horse-button");
+const spearmanBtn = document.querySelector(".spearman-button");
+const archerBtn = document.querySelector(".archer-button");
 
 // Constants
 const HORSE = "horse";
 const SPEARMAN = "spearman";
 const ARCHER = "archer";
-const STARTING_HEALTH = 5;
+const STARTING_HEALTH = 1;
 
 // Starting variables
 let playerHealth = STARTING_HEALTH;
 let computerHealth = STARTING_HEALTH;
 
-HorseDiv.addEventListener("click", playRound);
-SpearmanDiv.addEventListener("click", playRound);
-ArcherDiv.addEventListener("click", playRound);
+horseBtn.addEventListener("click", playRound);
+spearmanBtn.addEventListener("click", playRound);
+archerBtn.addEventListener("click", playRound);
+restartButton.addEventListener('click', function () { location.reload() });
 
 
 function gameOver() {
     fightersContainerDiv.style.visibility = "hidden";
-    messageDiv.addEventListener('click', function () { location.reload() });
+    restartButton.style.display = "block";
 }
 
 function randInt(number) {
@@ -71,8 +73,7 @@ function playRound() {
 
     if (playerHealth < 1 || computerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
-        messageDiv.classList.toggle("game-over");
+        messageDiv.innerHTML = "<h1>GAME OVER!</h1>";
 
     }
 
