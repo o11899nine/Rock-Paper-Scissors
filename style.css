@@ -2,6 +2,7 @@
   font-size: 62.5%;
   --site-color-01: #291E0A;
   --site-color-02: #EFD1A9;
+  cursor: url("img/aoe_cursor_arrow.png"), auto;
 }
 
 
@@ -18,11 +19,11 @@ h3 {
 }
 
 * {
-  cursor: url("img/aoe_cursor_arrow.png"), auto;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 
 .button {
   box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
@@ -49,6 +50,13 @@ body {
   max-width: 1200px;
 }
 
+.banner {
+  color: var(--site-color-01);
+  font-weight: bold;
+  background-color: var(--site-color-02);
+  background-image: url("img/scroll.png");
+  background-size: 100% 100%;
+}
 .header {
   align-items: center;
   display: flex;
@@ -58,13 +66,6 @@ body {
   margin: 20px 0px;
 }
 
-.banner {
-  color: var(--site-color-01);
-  font-weight: bold;
-  background-color: var(--site-color-02);
-  background-image: url("img/scroll.png");
-  background-size: 100% 100%;
-}
 
 .health-bars {
   color: var(--site-color-02);
@@ -131,7 +132,7 @@ body {
 
 
 .new-game-button,
-.start-button,
+
 .how-to-play-button {
   font-size: 2.6rem;
   padding: 5px 30px;
@@ -140,10 +141,6 @@ body {
   width: 215px;
 }
 
-
-.new-game-button {
-  /* display: flex; */
-}
 
 .fighters-container {
   display: flex;

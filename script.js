@@ -106,6 +106,8 @@ function newGame() {
     messageDiv.style.display = "block";
     howToPlayBtn.style.display = "none";
     newGameBtn.style.display = "none";
+    playerSelectionDiv.innerHTML = "";
+    computerSelectionDiv.innerHTML = "";
     playerHealth = STARTING_HEALTH;
     computerHealth = STARTING_HEALTH;
     setHearts(STARTING_HEALTH);
