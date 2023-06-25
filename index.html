@@ -13,44 +13,39 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div id="main-container">
-            <header class="banner"><h1>ROCK PAPER SCISSORS</h1><h3>AoE Edition</h3></header>
+        <div class="main-container">
+            <header class="header"><h1>ROCK PAPER SCISSORS</h1><h3>AoE Edition</h3></header>
 
             <!-- Health bars -->
-            <div id="health-bars">
-                <div id="player-health">
+            <div class="health-bars">
+                <div class="player-health">
                     PLAYER
                     <div class="hearts"></div>
                 </div>
-                <div id="computer-health">
+                <div class="computer-health">
                     ENEMY
                     <div class="hearts"></div>
                 </div>
             </div>
 
             <!-- Game screen -->
-            <div id="game-screen">
-                <div id="player-selection" class="selection"></div>
+            <div class="game-screen">
+                <div class="selection player-selection"></div>
                
-                <div id="game-text">
-                    <div id="message">Choose your fighter!</div>
+                <div class="game-text">
+                    <div class="message">Choose your fighter!</div>
                     <!-- Restart button -->
-                    <div id="restart-button"><h2>Restart</h2></div></div>
+                    <div class="restart-button"><h3>Restart</h3></div></div>
 
-                <div id="computer-selection" class="selection"></div>
+                <div class="selection computer-selection"></div>
             </div>
 
-            <!-- Fighter buttons -->
-            <div id="fighters-container">
-                <button id="horse-button" class="fighter-button active"
-                    value="horse"><img src="img/horse.png" alt="Horse"></button>
-                <button id="spearman-button"
-                    class="fighter-button spearman active" value="spearman"><img
-                        src="img/spearman.png" alt="Spearman"></button>
-                <button id="archer-button" class="fighter-button archer active"
-                    value="archer"><img src="img/archer.png" alt="Archer"></button>
+            <!-- Weapon choices -->
+            <div class="fighters-container">
+                <button class="fighter-button horse-button active" value="horse"><img src="img/horse.png" alt="Horse"></button>
+                <button class="fighter-button spearman-button active" value="spearman"><img src="img/spearman.png" alt="Spearman"></button>
+                <button class="fighter-button archer-button active" value="archer"><img src="img/archer.png" alt="Archer"></button>
             </div>
-
         </div>
     </body>
 </html>

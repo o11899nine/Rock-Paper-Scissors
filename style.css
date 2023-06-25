@@ -18,10 +18,6 @@ h1 {
   font-size: 3.2rem;
 }
 
-h2 {
-  font-size: 2.6rem;
-}
-
 h3 {
   font-size: 2rem;
 }
@@ -36,15 +32,13 @@ body {
   background-size: cover;
 }
 
-#main-container {
+.main-container {
   font-family: 'Rosarivo', serif;
   margin: 0 auto;
   max-width: 1200px;
-  display: flex;
-  flex-direction: column;
 }
 
-.banner {
+.header {
   align-items: center;
   background-color: var(--site-color-02);
   background-image: url("img/scroll.png");
@@ -58,7 +52,7 @@ body {
   margin: 20px 0px;
 }
 
-#health-bars {
+.health-bars {
   color: var(--site-color-02);
   display: flex;
   font-size: 2.4rem;
@@ -68,7 +62,7 @@ body {
   text-shadow: 1px 1px black;
 }
 
-#computer-health {
+.computer-health {
   align-items: end;
   display: flex;
   flex-direction: column;
@@ -79,11 +73,11 @@ body {
   gap: 10px;
 }
 
-.hearts>img {
+.hearts > img {
   filter: drop-shadow(1px 1px 1px black);
 }
 
-#game-screen {
+.game-screen {
   display: flex;
   height: 500px;
 }
@@ -94,51 +88,34 @@ body {
   justify-content: center;
 }
 
-#player-selection,
-#computer-selection {
+.player-selection,
+.computer-selection {
   width: 30%;
 }
 
-#player-selection>img {
+.player-selection > img {
   transform: rotateY(180deg);
 }
 
-#game-text {
+.game-text {
   align-items: center;
   color: var(--site-color-02);
   display: flex;
   flex-direction: column;
+  font-size: 4rem;
+  font-weight: bold;
   justify-content: center;
   text-align: center;
+  text-shadow: 2px 2px black;
   width: 40%;
 }
 
-#message {
-  font-size: 4rem;
-  font-weight: bold;
-  text-shadow: 2px 2px black;
-}
-
-#restart-button {
-  display: block;
-  background-color: var(--site-color-02);
-  background-image: url("img/scroll.png");
-  background-size: 100% 100%;
-  color: var(--site-color-01);
-  padding: 10px 40px;
-  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.7);
-  margin-top: 20px;
-  display: none;
-
-}
-
-#restart-button:hover {
-  box-shadow: 1px 1px 10px 1px gold;
+.message.game-over h1:hover,
+.message.game-over h3:hover {
   cursor: url("img/aoe_cursor_hand.png"), pointer;
 }
 
-
-#fighters-container {
+.fighters-container {
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -162,7 +139,7 @@ body {
   transform: rotateY(180deg);
 }
 
-.fighter-button.active:hover {
+.fighter-button:hover {
   box-shadow: 1px 1px 20px 2px gold;
   cursor: url("img/aoe_cursor_hand.png"), pointer;
   scale: 1.05;

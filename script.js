@@ -1,18 +1,17 @@
 // HTML element variables
-const playerHeartsDiv = document.querySelector("#player-health .hearts")
-const computerHeartsDiv = document.querySelector("#computer-health .hearts")
-const playerSelectionDiv = document.getElementById("player-selection")
-const computerSelectionDiv = document.getElementById("computer-selection");
-const messageDiv = document.getElementById("message");
-const restartButton = document.getElementById("restart-button");
-const fightersContainerDiv = document.getElementById("fighters-container")
-const horseDiv = document.getElementById("horse-button");
-const spearmanDiv = document.getElementById("spearman-button");
-const archerDiv = document.getElementById("archer-button");
+const playerHeartsDiv = document.querySelector(".player-health .hearts")
+const computerHeartsDiv = document.querySelector(".computer-health .hearts")
+const playerSelectionDiv = document.querySelector(".player-selection")
+const computerSelectionDiv = document.querySelector(".computer-selection");
+const messageDiv = document.querySelector(".message");
+const fightersContainerDiv = document.querySelector(".fighters-container");
+const HorseDiv = document.querySelector(".horse-button");
+const SpearmanDiv = document.querySelector(".spearman-button");
+const ArcherDiv = document.querySelector(".archer-button");
 
 // Constants
 const HORSE = "horse";
-const spearman = "spearman";
+const SPEARMAN = "spearman";
 const ARCHER = "archer";
 const STARTING_HEALTH = 5;
 
@@ -20,15 +19,14 @@ const STARTING_HEALTH = 5;
 let playerHealth = STARTING_HEALTH;
 let computerHealth = STARTING_HEALTH;
 
-restartButton.addEventListener('click', function () { location.reload() });
-horseDiv.addEventListener("click", playRound);
-spearmanDiv.addEventListener("click", playRound);
-archerDiv.addEventListener("click", playRound);
+HorseDiv.addEventListener("click", playRound);
+SpearmanDiv.addEventListener("click", playRound);
+ArcherDiv.addEventListener("click", playRound);
 
 
 function gameOver() {
-    restartButton.style.display = "block";
     fightersContainerDiv.style.visibility = "hidden";
+    messageDiv.addEventListener('click', function () { location.reload() });
 }
 
 function randInt(number) {
@@ -36,7 +34,7 @@ function randInt(number) {
 }
 
 function getComputerSelection() {
-    const choices = [HORSE, spearman, ARCHER];
+    const choices = [HORSE, SPEARMAN, ARCHER];
     return choices[randInt(choices.length)];
 }
 
@@ -52,8 +50,8 @@ function playRound() {
     }
 
     else if (
-        playerSelection === HORSE && computerSelection === spearman ||
-        playerSelection === spearman && computerSelection === ARCHER ||
+        playerSelection === HORSE && computerSelection === SPEARMAN ||
+        playerSelection === SPEARMAN && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
         messageDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
@@ -63,22 +61,19 @@ function playRound() {
 
     else if (
         playerSelection === HORSE && computerSelection === ARCHER ||
-        playerSelection === spearman && computerSelection === HORSE ||
-        playerSelection === ARCHER && computerSelection === spearman
+        playerSelection === SPEARMAN && computerSelection === HORSE ||
+        playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
         messageDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
-    if (playerHealth < 1) {
+    if (playerHealth < 1 || computerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>YOU HAVE BEEN DEFEATED!</h1>";
-        
-    } else if (computerHealth < 1) {
-        gameOver();
-        messageDiv.innerHTML = "<h1>YOU ARE VICTORIOUS!</h1>";
-        
+        messageDiv.innerHTML = "<h1>GAME OVER!</h1><h3>Click here to restart</h3>";
+        messageDiv.classList.toggle("game-over");
+
     }
 
 }
