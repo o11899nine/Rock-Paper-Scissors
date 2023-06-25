@@ -22,12 +22,12 @@ html {
 }
 
 /* TEXT */
-h1 {
+h1, .txt1 {
   font-weight: bold;
   font-size: 3.2rem;
 }
 
-h3 {
+h2, .txt2 {
   font-weight: bold;
   font-size: 2rem;
 }

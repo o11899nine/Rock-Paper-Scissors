@@ -64,7 +64,7 @@ function playRound() {
     computerSelectionDiv.innerHTML = `<img src="img/${computerSelection}.png">`;
 
     if (playerSelection === computerSelection) {
-        messageDiv.innerHTML = `<h1>IT'S A TIE</h1><h3>This will not end the war</h3>`;
+        messageDiv.innerHTML = `<div class="txt1">IT'S A TIE</div><div class="txt2">This will not end the war</div>`;
     }
 
     else if (
@@ -72,7 +72,7 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === ARCHER ||
         playerSelection === ARCHER && computerSelection === HORSE
     ) {
-        messageDiv.innerHTML = `<h1>YOU LOSE</h1><h3>The enemy's ${computerSelection} beats your ${playerSelection}</h3>`;
+        messageDiv.innerHTML = `<div class="txt1">YOU LOSE</div><div class=txt2">The enemy's ${computerSelection} beats your ${playerSelection}</div>`;
         playerHealth--;
         playerHeartsDiv.removeChild(playerHeartsDiv.firstElementChild);
     }
@@ -82,17 +82,17 @@ function playRound() {
         playerSelection === SPEARMAN && computerSelection === HORSE ||
         playerSelection === ARCHER && computerSelection === SPEARMAN
     ) {
-        messageDiv.innerHTML = `<h1>YOU WIN</h1><h3>Your ${playerSelection} beats the enemy's ${computerSelection}</h3>`;
+        messageDiv.innerHTML = `<div class="txt1">YOU WIN</div><div class=txt2">Your ${playerSelection} beats the enemy's ${computerSelection}</div>`;
         computerHealth--;
         computerHeartsDiv.removeChild(computerHeartsDiv.firstElementChild);
     }
 
     if (playerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>YOU HAVE BEEN DEFEATED!</h1>";
+        messageDiv.innerHTML = `<div class="txt1">YOU HAVE BEEN DEFEATED!</div>`;
     } else if (computerHealth < 1) {
         gameOver();
-        messageDiv.innerHTML = "<h1>YOU ARE VICTORIOUS!</h1>"
+        messageDiv.innerHTML = `<div class="txt1">YOU ARE VICTORIOUS!</div>`;
     }
 
 }
@@ -115,7 +115,7 @@ function setHearts(n) {
 function newGame() {
     healthBarsDiv.style.visibility = "visible";
     fightersContainerDiv.style.visibility = "visible";
-    messageDiv.innerHTML = "<h1>Choose your fighter!</h1>";
+    messageDiv.innerHTML = `<div class="txt1">Choose your fighter!</div>`;
     messageDiv.style.display = "block";
     howToPlayBtn.style.display = "none";
     newGameBtn.style.display = "none";
