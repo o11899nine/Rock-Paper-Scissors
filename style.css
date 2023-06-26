@@ -236,3 +236,19 @@ body {
   height: 90%;
   transform: rotateY(180deg);
 }
+
+/* FOOTER */
+.footer {
+  color: var(--aoe-beige);
+  font-size: 1.6rem;
+  margin: 25px;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--aoe-beige);;
+}
+
+.footer a:hover {
+  color: var(--aoe-brown);
+}
