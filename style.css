@@ -63,7 +63,6 @@ body {
   max-width: 1200px;
 }
 
-
 /* HEADER */
 .header {
   align-items: center;
@@ -186,7 +185,6 @@ body {
 
 }
 
-
 /* BUTTONS */
 .button {
   align-items: center;
@@ -209,7 +207,6 @@ body {
   padding: 5px 30px;
   width: 215px;
 }
-
 
 /* FIGHTER CONTAINER */
 .fighters-container {

@@ -52,15 +52,16 @@ function setHidden(arrayOfElements) {
 	});
 }
 
-function setDisplayNone(arrayOfElements) {
-	arrayOfElements.forEach((element) => {
-		element.style.display = "none";
-	});
-}
 
 function setDisplayFlex(arrayOfElements) {
 	arrayOfElements.forEach((element) => {
 		element.style.display = "flex";
+	});
+}
+
+function setDisplayNone(arrayOfElements) {
+	arrayOfElements.forEach((element) => {
+		element.style.display = "none";
 	});
 }
 
@@ -76,7 +77,7 @@ function getComputerSelection() {
 
 function setHearts(n) {
 	heartsContainersDiv.forEach((heartsContainer) => {
-		clearInnerHTML(heartsContainer);
+		clearInnerHTML([heartsContainer]);
 		for (let i = 0; i < STARTING_HEALTH; i++) {
 			const HEART_ICON = document.createElement("img");
 			HEART_ICON.src = "img/heart.png";
