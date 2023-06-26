@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock Paper Scissors</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div class="main-container">
-            <header class="header aoe-scroll"><h1>ROCK PAPER SCISSORS</h1><h2>AoE Edition</h2></header>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rock Paper Scissors</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="main-container">
+			<!-- Header -->
+			<header class="header aoe-scroll">
+				<h1>ROCK PAPER SCISSORS</h1>
+				<h2>AoE Edition</h2></header>
 
-            <!-- Health bars -->
-            <div class="health-bars text-shadow">
-                <div class="player-health">
-                    PLAYER
-                    <div class="hearts"></div>
-                </div>
-                <div class="computer-health">
-                    ENEMY
-                    <div class="hearts"></div>
-                </div>
-            </div>
+			<!-- Health bars -->
+			<div class="health-bars text-shadow">
+				<div class="player-health">
+					PLAYER
+					<div class="hearts"></div>
+				</div>
+				<div class="computer-health">
+					ENEMY
+					<div class="hearts"></div>
+				</div>
+			</div>
 
-            <!-- Game screen -->
-            <div class="game-screen">
-                <div class="selection player-selection"></div>
-               
-                <div class="center-textarea">
-                    <!-- How to play -->
-                    <div class="how-to-play">
-                        <h1>How to play</h1><br>
-                        <p>Each round, choose a fighter.</p><br>
-                        <p><strong>Horse</strong> beats <strong>Archer</strong><br>
-                        <strong>Spearman</strong> beats <strong>Horse</strong><br>
-                        <strong>Archer</strong> beats <strong>Spearman</strong></p><br>
-                        <p>The round's loser loses a heart.</p><br>
-                        <p>The game ends when either the player or the enemy has no hearts left.</p>
-                    </div>
-                    <!-- Result message -->
-                    <div class="message text-shadow"></div>
-                    <!-- New Game button -->
-                    <button class="new-game-button button menu-button aoe-scroll">New Game</button>
-                    <!-- How to play button -->
-                    <button class="how-to-play-button button menu-button aoe-scroll">How to play</button>
-                </div>
+			<!-- Game screen -->
+			<div class="game-screen">
+				<div class="selection player-selection"></div>
 
-                <div class="selection computer-selection"></div>
-            </div>
+				<div class="center-textarea">
+					<!-- How to play -->
+					<div class="how-to-play">
+						<h1>How to play</h1><br>
+						<p>Each round, choose a fighter.</p><br>
+						<p><strong>Horse</strong> beats <strong>Archer</strong><br>
+							<strong>Spearman</strong> beats <strong>Horse</strong><br>
+							<strong>Archer</strong> beats <strong>Spearman</strong></p><br>
+						<p>The round's loser loses a heart.</p><br>
+						<p>The game ends when either the player or the enemy 
+							has no hearts left.</p>
+					</div>
+					<!-- Result message -->
+					<div class="message text-shadow"></div>
+					<!-- New Game button -->
+					<button class="new-game-button button menu-button aoe-scroll">
+						New Game</button>
+					<!-- How to play button -->
+					<button class="how-to-play-button button menu-button aoe-scroll">
+						How to play</button>
+				</div>
 
-            <!-- Fighter buttons -->
-            <div class="fighters-container">
-                <button class="horse-button fighter-button button" value="horse"><img src="img/horse.png" alt="Horse"></button>
-                <button class="spearman-button fighter-button button" value="spearman"><img src="img/spearman.png" alt="Spearman"></button>
-                <button class="archer-button fighter-button button" value="archer"><img src="img/archer.png" alt="Archer"></button>
-            </div>
-        </div>
-    </body>
+				<div class="selection computer-selection"></div>
+			</div>
+
+			<!-- Fighter buttons -->
+			<div class="fighters-container">
+				<button class="horse-button fighter-button button" value="horse">
+					<img
+						src="img/horse.png" alt="Horse"></button>
+				<button class="spearman-button fighter-button button" value="spearman">
+					<img
+						src="img/spearman.png" alt="Spearman"></button>
+				<button class="archer-button fighter-button button" value="archer">
+					<img
+						src="img/archer.png" alt="Archer"></button>
+			</div>
+		</div>
+	</body>
 </html>
