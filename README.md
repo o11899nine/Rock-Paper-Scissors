@@ -3,7 +3,6 @@
 A Rock Paper Scissors browser game with an Age of Empires theme. After having dabbled with HTML and CSS for a few months this was my first time diving a little deeper into javascript. 
 
 ## Version 1.0
--------------
 
 **Features:**
 - A five-round Rock Paper Scissors game versus the computer
