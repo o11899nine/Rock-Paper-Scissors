@@ -58,10 +58,6 @@ body {
   font-family: 'Rosarivo', serif;
 }
 
-body:after {
-  content: url("img/grass.png");
-}
-
 .main-container {
   margin: 0 auto;
   max-width: 1200px;
