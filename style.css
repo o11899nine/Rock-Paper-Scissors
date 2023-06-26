@@ -166,7 +166,7 @@ body {
 }
 
 .message {
-  display: none;
+  flex-direction: column;
 }
 
 .how-to-play {
