@@ -251,4 +251,5 @@ body {
 
 .footer a:hover {
   color: var(--aoe-brown);
+  cursor: var(--aoe-cursor-hand);
 }

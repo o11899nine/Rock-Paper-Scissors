@@ -1,6 +1,6 @@
 # AoE Rock Paper Scissors
 
-A browser-based Rock Paper Scissors game with an Age of Empires theme. After having dabbled with HTML and CSS for a few months this was my first time diving a little deeper into javascript. 
+A Rock Paper Scissors browser game with an Age of Empires theme. After having dabbled with HTML and CSS for a few months this was my first time diving a little deeper into javascript. 
 
 ## Version 1.0
 -------------
